@@ -147,12 +147,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  	ssd1306_SetCursor(30, 20);
-  	char str[20];
-  	sprintf(str, "%4dcm", getDistance());
-  	ssd1306_WriteString(str, Font_11x18, 1);
+  	softScrollLeft();
+  	ssd1306_DrawPixel(127, getDistance(), 1);
   	ssd1306_UpdateScreen();
-  	HAL_Delay(200);
+  	HAL_Delay(50);
   }
   /* USER CODE END 3 */
 }
